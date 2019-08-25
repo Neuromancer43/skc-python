@@ -122,7 +122,7 @@ def basic_approxes(l_0, new_settings):
 		# generation that we can use
 		already_exists = generation_file_exists(i+1)
 		if (already_exists):
-			print "Yay! Generation " + str(i+1) + " file already found, skipping"
+			print("Yay! Generation " + str(i+1) + " file already found, skipping")
 			# less work for us. Assume it's correct.
 			continue
 		# Generate a new generation using the previous one as prefixes
@@ -148,5 +148,5 @@ def generate_approxes(l0, settings):
 	basic_approxes(l0, settings)
 	
 	gen_time = time.time() - begin_time
-	print "Generation time: " + str(gen_time)
+	print("Generation time: " + str(gen_time))
 

@@ -78,7 +78,7 @@ def list_as_string(list_A):
 ##############################################################################
 def assert_and_print(bool_condition, arg_to_stringify, msg_prefix=""):
 	if (not bool_condition):
-		print "[ASSERTION FAILED] " + msg_prefix + ": " + str(arg_to_stringify)
+		print("[ASSERTION FAILED] " + msg_prefix + ": " + str(arg_to_stringify))
 	assert(bool_condition)
 
 ##############################################################################
@@ -115,7 +115,7 @@ def approx_equals(value1, value2):
 ##############################################################################
 # Indented printing based on depth
 def print_indented(message, depth):
-	print (" " * (depth * 2)) + message
+	print((" " * (depth * 2)) + message)
 
 ##############################################################################
 # Chain the tensor product of multiple operators
@@ -183,8 +183,8 @@ def assert_matrix_unitary(matrix, tolerance=TOLERANCE3):
 def assert_matrix_nonempty(matrix):	
 	abs_trace = numpy.abs(numpy.trace(matrix*matrix.H))
 	if (abs_trace < TOLERANCE3):
-		print "abs_trace= " + str(abs_trace)
-		print "Matrix is empty \n" + str(matrix)
+		print("abs_trace= " + str(abs_trace))
+		print("Matrix is empty \n" + str(matrix))
 	assert(abs_trace > TOLERANCE3)
 	
 ##############################################################################

@@ -14,19 +14,19 @@ matrix_U = axis_to_unitary(axis, theta, H2)
 op_U = Operator(name="U", matrix=matrix_U)
 
 n = 2
-print "U= " + str(matrix_U)
-print "n= " + str(n)
+print("U= " + str(matrix_U))
+print("n= " + str(n))
 
 # Prepare the compiler
 sk_set_factor_method(dawson_group_factor)
 sk_set_basis(H2)
 sk_set_axis(X_AXIS)
 sk_build_tree("su2", 15)
-
 Un = solovay_kitaev(op_U, n)
-print "Approximated U: " + str(Un)
 
-print "Un= " + str(Un.matrix)
+print("Approximated U: " + str(Un))
 
-print "trace_dist(U,Un)= " + str(trace_distance(Un.matrix, op_U.matrix))
-print "fowler_dist(U,Un)= " + str(fowler_distance(Un.matrix, op_U.matrix))
+print("Un= " + str(Un.matrix))
+
+print("trace_dist(U,Un)= " + str(trace_distance(Un.matrix, op_U.matrix)))
+print("fowler_dist(U,Un)= " + str(fowler_distance(Un.matrix, op_U.matrix)))

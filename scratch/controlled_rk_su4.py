@@ -15,8 +15,8 @@ matrix_U = matrixify([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,numpy.exp(1j * math.p
 op_U = Operator(name="U", matrix=matrix_U)
 
 n = 4 
-print "U= " + str(matrix_U)
-print "n= " + str(n)
+print("U= " + str(matrix_U))
+print("n= " + str(n))
 
 # Prepare the compiler
 sk_set_factor_method(aram_diagonal_factor)
@@ -31,11 +31,11 @@ Un = solovay_kitaev(op_U, n)
 
 compile_time = time.time() - begin_time
 
-print "Compile Time: " + str(compile_time)
-print "Approximated U: " + str(Un)
+print("Compile Time: " + str(compile_time))
+print("Approximated U: " + str(Un))
 
-print "Un= " + str(Un.matrix)
-print "len(Un)= " + str(len(Un.ancestors))
+print("Un= " + str(Un.matrix))
+print("len(Un)= " + str(len(Un.ancestors)))
 
-print "trace_dist(U,Un)= " + str(trace_distance(Un.matrix, op_U.matrix))
-print "fowler_dist(U,Un)= " + str(fowler_distance(Un.matrix, op_U.matrix))
+print("trace_dist(U,Un)= " + str(trace_distance(Un.matrix, op_U.matrix)))
+print("fowler_dist(U,Un)= " + str(fowler_distance(Un.matrix, op_U.matrix)))

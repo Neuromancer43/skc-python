@@ -30,19 +30,19 @@ CNot = Operator(name="CN", matrix=CNot_matrix)
 
 iset4 = [H1, H2, T1, T2, Tinv1, Tinv2, CNot]
 
-print "ISET SU(4)"
+print("ISET SU(4)")
 
 for insn in iset4:
-	print str(insn)
+	print(str(insn))
 
 ##############################################################################
 # Hermitian basis
 
 H4 = get_hermitian_basis(d=4)
 
-print "BASIS H2"
+print("BASIS H2")
 for (k,v) in H4.items_minus_identity():
-	print str(k) + " => " + str(v.matrix)
+	print(str(k) + " => " + str(v.matrix))
 
 ##############################################################################
 # Simplifying rules
@@ -65,7 +65,7 @@ for arg1 in ['H1','H2']:
 	iset.remove(arg1)
 	for arg2 in iset:
 		new_rule = GeneralRule([arg1, arg2, arg1], arg2)
-		print str(new_rule)
+		print(str(new_rule))
 		H_rules.append(new_rule)
 
 # Similarly, T1 commutes with T2 and H2 and likewise
@@ -80,7 +80,7 @@ for arg1 in T1_set:
 	arg1d = T1_setd[0]
 	for arg2 in ['T2','T2d','H2']:
 		new_rule = GeneralRule([arg1, arg2, arg1d], arg2)
-		print str(new_rule)
+		print(str(new_rule))
 		T_rules.append(new_rule)
 
 T2_set = ['T2','T2d']
@@ -90,7 +90,7 @@ for arg1 in T2_set:
 	arg1d = T2_setd[0]
 	for arg2 in ['T1','T1d','H1']:
 		new_rule = GeneralRule([arg1, arg2, arg1d], arg2)
-		print str(new_rule)
+		print(str(new_rule))
 		T_rules.append(new_rule)
 		
 adjoint_rule = AdjointRule(id_sym=H4.identity.name)

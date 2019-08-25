@@ -15,13 +15,13 @@ def get_random_hermitian(basis):
 	for k,v in basis.items_minus_identity():
 		components[k] = random.random()
 		
-	norm = scipy.linalg.norm(components.values())
+	norm = scipy.linalg.norm(list(components.values()))
 
 	for k in components:
 		components[k] /= norm
 		
 	# Check that we have actually normalized this vector
-	assert_approx_equals(scipy.linalg.norm(components.values()), 1)
+	assert_approx_equals(scipy.linalg.norm(list(components.values())), 1)
 	
 	d = basis.d
 	sum = matrixify(numpy.zeros([d,d]))
@@ -64,7 +64,7 @@ def get_random_unitary(basis_H, angle_lower=-PI_HALF, angle_upper=PI_HALF):
 # Compose a matrix given components from a basis
 # Does not check whether components are normalized, or even from the basis
 def matrix_from_components(components, basis):
-	assert_approx_equals(scipy.linalg.norm(components.values()), 1)
+	assert_approx_equals(scipy.linalg.norm(list(components.values())), 1)
 	d = basis.d
 	sum = matrixify(numpy.zeros([d,d]))
 	for k,v in components.items():
@@ -76,7 +76,7 @@ def matrix_from_components(components, basis):
 ##############################################################################
 def axis_to_unitary(axis_components, angle, basis):
 	# Check that the axis is normalized
-	assert_approx_equals(scipy.linalg.norm(axis_components.values()), 1)
+	assert_approx_equals(scipy.linalg.norm(list(axis_components.values())), 1)
 	matrix_H = matrix_from_components(axis_components, basis)
 	matrix_U = exp_hermitian_to_unitary(matrix_H, angle, basis)
 	return matrix_U

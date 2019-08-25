@@ -19,15 +19,15 @@ class BasicApproxSettings:
 		self.iset_dict[new_identity.name] = new_identity
 
 	def print_iset(self):
-		print "INSTRUCTION SET"
+		print("INSTRUCTION SET")
 		for insn in self.iset:
-			print str(insn)
+			print(str(insn))
 
 	##############################################################################
 	# Verify that all operators in iset are the same size and shape
 	def check_iset(self, iset):
 		m = len(iset)
-		print str(m) + " instructions found"
+		print(str(m) + " instructions found")
 		
 		first_op = iset[0] # Python uses 0-based indexing
 		first_shape = first_op.matrix.shape

@@ -51,7 +51,7 @@ def process_kdtree(base_dir, filecount_upper):
 	set_filename_suffix(str(filecount_upper))
 	
 	build_time = time.time() - begin_time
-	print "Build time: " + str(build_time)
+	print("Build time: " + str(build_time))
 	
 	dump_to_file(tree)
 

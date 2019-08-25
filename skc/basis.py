@@ -63,10 +63,10 @@ class Basis:
 		return dict
 
 	def print_string(self):
-		print "SU("+str(self.d)+") Basis"
+		print("SU("+str(self.d)+") Basis")
 		for gate in self.basis_dict.values():
-			print str(gate)
-			print str(gate.matrix)
+			print(str(gate))
+			print(str(gate.matrix))
 
 ##############################################################################
 # Get the standard vector basis for R^n, that is, n n-dimensional vectors
@@ -255,7 +255,7 @@ def cart3d_to_h2(x, y, z):
 	components[('f',(1,2))] = x
 	components[('f',(2,1))] = y
 	components[('h',(2,2))] = z
-	norm = scipy.linalg.norm(components.values())
+	norm = scipy.linalg.norm(list(components.values()))
 	for k,v in components.items():
 		components[k] /= norm
 	return components

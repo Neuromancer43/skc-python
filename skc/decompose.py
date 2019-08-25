@@ -25,7 +25,7 @@ def get_basis_components(matrix_H, basis):
 	
 	# Norm will always be positive, so we have to fix up the sign that
 	# we return below, b/c it will be interpreted as (two times) an angle
-	norm = scipy.linalg.norm(component_dict.values())
+	norm = scipy.linalg.norm(list(component_dict.values()))
 	#print "norm= " + str(norm)
 	
 	sign_plus = 0
@@ -61,7 +61,7 @@ def get_basis_components(matrix_H, basis):
 	#	assert(component_dict[k] >= 0)
 
 	# Check that we really normalized the values
-	assert_approx_equals(scipy.linalg.norm(component_dict.values()), 1)
+	assert_approx_equals(scipy.linalg.norm(list(component_dict.values())), 1)
 	
 	# Verify that we can compose the matrix again from these components
 	M = matrix_from_components(component_dict, basis)

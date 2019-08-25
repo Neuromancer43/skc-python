@@ -23,12 +23,12 @@ def search_kdtree(tree, search_U, basis):
 		K *= -1
 	search_op = Operator(name="Search", matrix=search_U)
 	search_op.dimensions = components_to_kdpoint(components, basis, K)
-	print "search.dimensions= " + str(search_op.dimensions)
+	print("search.dimensions= " + str(search_op.dimensions))
 	
 	nearest = tree.query(search_op, t=1) # find nearest 4 points
 	
 	end_time = time.time()
-	print "Search time: " + str(end_time - begin_time)
+	print("Search time: " + str(end_time - begin_time))
 	return nearest[0]
 
 ##############################################################################

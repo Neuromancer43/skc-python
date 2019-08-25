@@ -22,7 +22,7 @@ def eliminate_close_children(op_list, this_matrix):
 		child = op_list[0]
 		dist = fowler_distance(child.matrix, this_matrix)
 		if (dist < EPS_0):
-			print "eliminated with dist= " + str(dist)
+			print("eliminated with dist= " + str(dist))
 			del op_list[0]
 		else:
 			break
@@ -104,7 +104,7 @@ class KDTree():
 			# sort point list and choose median as pivot point,
 			# TODO: better selection method, linear-time selection, distribution
 			op_list.sort(key=lambda point: point.dimensions[axis])
-			median = len(op_list)/2 # choose median
+			median = len(op_list)//2 # choose median
 			op_this = op_list[median]
 			# create node and recursively construct subtrees
 			#print "median= " + str(median)

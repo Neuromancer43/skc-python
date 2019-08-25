@@ -10,7 +10,7 @@ import numpy
 iset2 = [H, T, T_inv]
 
 for insn in iset2:
-	print str(insn)
+	print(str(insn))
 
 # Simplifying rules
 identity_rule = IdentityRule()
@@ -31,9 +31,9 @@ simplify_rules = [
 
 H2 = get_hermitian_basis(d=2)
 
-print "BASIS H2"
+print("BASIS H2")
 for (k,v) in H2.items_minus_identity():
-	print str(k) + " => " + str(v.matrix)
+	print(str(k) + " => " + str(v.matrix))
 
 set_filename_prefix("pickles/su2/gen")
 
